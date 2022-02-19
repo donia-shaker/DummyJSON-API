@@ -14,10 +14,28 @@ router.get("/products", function (req, res, next) {
   axios
     .get("https://dummyjson.com/products")
     .then(function (response) {
-      // // handle success
+      // handle success
       console.log(response.data);
       res.render("products", {
         products: response.data.products,
+      });
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    });
+});
+
+/* GET Single products page. */
+router.get("/products/:id", function (req, res, next) {
+  const pro = req.params.id;
+  axios
+    .get(`https://dummyjson.com/products/${pro}`)
+    .then(function (response) {
+      // handle success
+      console.log(response.data);
+      res.render("details", {
+        products: response.data,
       });
     })
     .catch(function (error) {
