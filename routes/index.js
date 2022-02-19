@@ -26,6 +26,23 @@ router.get("/products", function (req, res, next) {
     });
 });
 
+/* GET Categories page. */
+router.get("/products/categories", function (req, res, next) {
+  axios
+    .get("https://dummyjson.com/products/categories")
+    .then(function (response) {
+      // handle success
+      console.log(response.data);
+      res.render("categories", {
+        products: response.data,
+      });
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    });
+});
+
 /* GET search products page. */
 router.get("/products/search", function (req, res, next) {
   const searchQuery = req.query.q;
