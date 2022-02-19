@@ -1,0 +1,5 @@
+header.b-img {
+  background-image: url("../images/bg-img.jpeg");
+  background-size: cover;
+  height: calc(100vh - 128px);
+}
