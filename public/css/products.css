@@ -1,0 +1,9 @@
+ul {
+  list-style: none;
+}
+ul li .box {
+  height: 90%;
+}
+ul li img {
+  height: 200px;
+}
