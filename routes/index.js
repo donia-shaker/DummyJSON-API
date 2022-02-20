@@ -79,4 +79,22 @@ router.get("/products/:id", function (req, res, next) {
     });
 });
 
+//  GET Category page
+router.get("/products/category/:cat", function (req, res, next) {
+  const category = req.params.cat;
+  axios
+    .get(`https://dummyjson.com/products/category/${category}`)
+    .then(function (response) {
+      // handle success
+      console.log(response.data);
+      res.render("category", {
+        products: response.data.products,
+      });
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    });
+});
+
 module.exports = router;
