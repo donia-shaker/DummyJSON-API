@@ -30,10 +30,9 @@
         <ul
           class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
         >
-          <% products.forEach(function (e) {%> <% var cat=[];for(let i=0 ; i <
-          e.length-1 ;i++) {cat.push(e[i]);}%>
+          <% products.forEach(function(e){ %>
           <a
-            href="/products/search?q=<% cat.join("") %>  "
+            href="/products/category/<%= e %> "
             style="text-decoration: none; color: black"
           >
             <li>
